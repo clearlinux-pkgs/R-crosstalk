@@ -4,12 +4,12 @@
 #
 Name     : R-crosstalk
 Version  : 1.0.0
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/crosstalk_1.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/crosstalk_1.0.0.tar.gz
 Summary  : Inter-Widget Interactivity for HTML Widgets
 Group    : Development/Tools
-License  : MIT
+License  : Apache-2.0 MIT
 Requires: R-ggplot2
 Requires: R-htmltools
 Requires: R-shiny
@@ -30,11 +30,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521165437
+export SOURCE_DATE_EPOCH=1521188814
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521165437
+export SOURCE_DATE_EPOCH=1521188814
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
