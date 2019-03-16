@@ -4,7 +4,7 @@
 #
 Name     : R-crosstalk
 Version  : 1.0.0
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/crosstalk_1.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/crosstalk_1.0.0.tar.gz
 Summary  : Inter-Widget Interactivity for HTML Widgets
@@ -16,11 +16,10 @@ Requires: R-shiny
 BuildRequires : R-ggplot2
 BuildRequires : R-htmltools
 BuildRequires : R-shiny
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
-with each other, with Shiny or without (i.e. static .html files). Currently
-    supports linked brushing and filtering.
+# Crosstalk [![Build Status](https://travis-ci.org/rstudio/crosstalk.svg?branch=master)](https://travis-ci.org/rstudio/crosstalk)
 
 %prep
 %setup -q -c -n crosstalk
@@ -30,11 +29,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523296646
+export SOURCE_DATE_EPOCH=1552731399
 
 %install
+export SOURCE_DATE_EPOCH=1552731399
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523296646
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,8 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library crosstalk|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  crosstalk || :
 
 
 %files

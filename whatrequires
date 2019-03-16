@@ -1,16 +1,6 @@
 # This file contains recursive sources that require this package
 R-DT
-R-bipartite
-R-brms
-R-broom
-R-caret
-R-compositions
-R-modelr
+R-leaflet
 R-plotly
-R-recipes
 R-rgl
-R-rstanarm
-R-shinystan
-R-sna
 R-threejs
-R-tidyverse
