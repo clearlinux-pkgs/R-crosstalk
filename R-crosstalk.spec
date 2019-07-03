@@ -4,22 +4,29 @@
 #
 Name     : R-crosstalk
 Version  : 1.0.0
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/crosstalk_1.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/crosstalk_1.0.0.tar.gz
 Summary  : Inter-Widget Interactivity for HTML Widgets
 Group    : Development/Tools
 License  : Apache-2.0 MIT
+Requires: R-R6
 Requires: R-ggplot2
 Requires: R-htmltools
+Requires: R-jsonlite
+Requires: R-lazyeval
 Requires: R-shiny
+BuildRequires : R-R6
 BuildRequires : R-ggplot2
 BuildRequires : R-htmltools
+BuildRequires : R-jsonlite
+BuildRequires : R-lazyeval
 BuildRequires : R-shiny
 BuildRequires : buildreq-R
 
 %description
-# Crosstalk [![Build Status](https://travis-ci.org/rstudio/crosstalk.svg?branch=master)](https://travis-ci.org/rstudio/crosstalk)
+with each other, with Shiny or without (i.e. static .html files). Currently
+    supports linked brushing and filtering.
 
 %prep
 %setup -q -c -n crosstalk
@@ -28,13 +35,13 @@ BuildRequires : buildreq-R
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552731399
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562195246
 
 %install
-export SOURCE_DATE_EPOCH=1552731399
+export SOURCE_DATE_EPOCH=1562195246
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -63,12 +70,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  crosstalk || :
+R CMD check --no-manual --no-examples --no-codoc crosstalk || :
 
 
 %files
