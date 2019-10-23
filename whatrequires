@@ -1,10 +1,6 @@
 # This file contains recursive sources that require this package
 R-DT
-R-brms
 R-leaflet
 R-plotly
 R-rgl
-R-rglwidget
-R-rstanarm
-R-shinystan
 R-threejs

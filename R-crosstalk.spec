@@ -4,7 +4,7 @@
 #
 Name     : R-crosstalk
 Version  : 1.0.0
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/crosstalk_1.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/crosstalk_1.0.0.tar.gz
 Summary  : Inter-Widget Interactivity for HTML Widgets
@@ -23,10 +23,10 @@ BuildRequires : R-jsonlite
 BuildRequires : R-lazyeval
 BuildRequires : R-shiny
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-with each other, with Shiny or without (i.e. static .html files). Currently
-    supports linked brushing and filtering.
+# Crosstalk [![Build Status](https://travis-ci.org/rstudio/crosstalk.svg?branch=master)](https://travis-ci.org/rstudio/crosstalk)
 
 %prep
 %setup -q -c -n crosstalk
@@ -36,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562195246
+export SOURCE_DATE_EPOCH=1571813747
 
 %install
-export SOURCE_DATE_EPOCH=1562195246
+export SOURCE_DATE_EPOCH=1571813747
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
