@@ -4,7 +4,7 @@
 #
 Name     : R-crosstalk
 Version  : 1.1.0.1
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/crosstalk_1.1.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/crosstalk_1.1.0.1.tar.gz
 Summary  : Inter-Widget Interactivity for HTML Widgets
@@ -14,34 +14,34 @@ Requires: R-R6
 Requires: R-htmltools
 Requires: R-jsonlite
 Requires: R-lazyeval
-Requires: R-shiny
 BuildRequires : R-R6
 BuildRequires : R-htmltools
 BuildRequires : R-jsonlite
 BuildRequires : R-lazyeval
-BuildRequires : R-shiny
 BuildRequires : buildreq-R
 
 %description
-# Crosstalk [![Build Status](https://travis-ci.org/rstudio/crosstalk.svg?branch=master)](https://travis-ci.org/rstudio/crosstalk)
+with each other, with Shiny or without (i.e. static .html files). Currently
+    supports linked brushing and filtering.
 
 %prep
 %setup -q -c -n crosstalk
+cd %{_builddir}/crosstalk
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1584109761
+export SOURCE_DATE_EPOCH=1589768120
 
 %install
-export SOURCE_DATE_EPOCH=1584109761
+export SOURCE_DATE_EPOCH=1589768120
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
