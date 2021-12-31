@@ -4,7 +4,7 @@
 #
 Name     : R-crosstalk
 Version  : 1.2.0
-Release  : 42
+Release  : 43
 URL      : https://cran.r-project.org/src/contrib/crosstalk_1.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/crosstalk_1.2.0.tar.gz
 Summary  : Inter-Widget Interactivity for HTML Widgets
@@ -34,10 +34,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636146847
+export SOURCE_DATE_EPOCH=1640994100
 
 %install
-export SOURCE_DATE_EPOCH=1636146847
+export SOURCE_DATE_EPOCH=1640994100
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
