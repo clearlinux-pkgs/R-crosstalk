@@ -4,7 +4,7 @@
 #
 Name     : R-crosstalk
 Version  : 1.2.0
-Release  : 49
+Release  : 50
 URL      : https://cran.r-project.org/src/contrib/crosstalk_1.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/crosstalk_1.2.0.tar.gz
 Summary  : Inter-Widget Interactivity for HTML Widgets
